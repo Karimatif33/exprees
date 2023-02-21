@@ -1,0 +1,20 @@
+
+<% arrArticle.forEach(tItem => {     %>
+   <a  style="all: unset; cursor: pointer;" href="/article/<%= tItem._id %>">  <article >
+    <h2 >
+        <%= tItem.title %>
+    </h2>
+
+
+    <p>
+        <%= tItem.summary %>
+
+
+        <a style="text-decoration: none; color:cornflowerblue;" class="btn" href="/article/<%= tItem._id %>">show more</a>
+    </p>
+</article>
+
+</a>
+
+<% });%>
+

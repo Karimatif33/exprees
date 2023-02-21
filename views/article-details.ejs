@@ -1,0 +1,50 @@
+<%- include("./partials/head") %>
+
+
+<body id="body">
+
+<%- include("./partials/header") %>
+
+
+
+
+  <main id="main">
+
+    <%- include("./partials/article-data") %>
+
+
+    <button data-linkid="<%= objArticle._id %>" class="create">
+      Delete this article
+  </button> 
+
+  </main>
+
+  <%- include("./partials/footer") %>
+
+
+
+
+<script>
+
+const btnelm = document.querySelector(".create")
+const articleId =btnelm.getAttribute("data-linkid")
+
+btnelm.addEventListener("click", (eo)=> {
+
+fetch(`/article/${articleId}`, {method:"DELETE"})
+.then((response)=> response.json())
+.then((data) => {
+  window.location.href=data .mylink
+})
+.catch((err) => {
+  console.log(err)
+});
+
+} )
+
+
+
+</script>
+</body>
+
+</html>
